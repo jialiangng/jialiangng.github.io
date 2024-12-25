@@ -191,12 +191,12 @@ export default {
       carousel3: {
         id: 3,
         type: "left-right",
-        title: "TMFORCE Workforce Mangement System",
+        title: "TMFORCE Workforce Management System",
         description: "System widely used by Telekom Malaysia Organization to manage day-to-day workforce operations.",
         buttonType: "link",
         link: "https://www.tmrnd.com.my/workforce-management-system/",
         images: [
-          { link: require("./assets/force.jpg"), description: "TMFORCE", extra: true },
+          { link: require("./assets/force.jpg"), description: "TMFORCE" },
         ]
       }
     }
