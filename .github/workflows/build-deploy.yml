@@ -1,0 +1,39 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          repository: master
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16.x'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Artifact
+        run: npm run build
+
+      - name: Upload Github Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "/dist" 
+          
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+     - name: Deploy Github Pages Site
+       uses: actions/deploy-pages@v4.0.5
+       with:
+         token: ${{ github.token }}
