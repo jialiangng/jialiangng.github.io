@@ -1,11 +1,11 @@
 <template>
-  <div id="section" class="container mx-auto bg-indigo-300 rounded-md shadow-md pt-5 pb-5">
+  <div id="section" class="container mx-auto">
     <slot></slot>
   </div>
 </template>
 
 <script>
-    export default {
-      name: 'SectionComponent'
-    }
+export default {
+  name: 'SectionComponent'
+}
 </script>
